@@ -9,8 +9,8 @@ const BlogPortal = () => {
 
   // Fetch blogs from API
   useEffect(() => {
-    axios4
-      .get(`${backlink}/get-blogs`) // Replace with your API URL
+    axios
+      .get(`${process.env.backlink}/get-blogs`) // Accessing the env variable
       .then((response) => {
         const responseData = response.data;
         const blogEntries = Object.keys(responseData[0])
